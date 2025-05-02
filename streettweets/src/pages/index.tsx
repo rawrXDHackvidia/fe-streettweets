@@ -57,6 +57,12 @@ export default function Home() {
               >
                 Report
               </Link>
+              <Link
+                href="/find-id"
+                className="hover:border-b-2 hover:border-white transition-all"
+              >
+                Find ID
+              </Link>
             </div>
           </nav>
         </div>
