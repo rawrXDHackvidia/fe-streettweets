@@ -8,6 +8,8 @@ import {
   Plus,
   Check,
 } from "lucide-react";
+import Lottie from "lottie-react";
+import RoadAnimation from "../../public/assets/damage-road-lottie.json";
 
 const LiveMap = () => {
   return (
@@ -26,7 +28,6 @@ const LiveMap = () => {
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Navigation */}
       <header className="bg-gradient-to-r from-sky-400 to-blue-500 text-white">
         <div className="container mx-auto px-4 py-4">
           <nav className="flex justify-between items-center">
@@ -62,6 +63,12 @@ export default function Home() {
                 className="hover:border-b-2 hover:border-white transition-all"
               >
                 Find ID
+              </Link>
+              <Link
+                href="/track"
+                className="hover:border-b-2 hover:border-white transition-all"
+              >
+                Track
               </Link>
             </div>
           </nav>
@@ -201,13 +208,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <Image
-                src="/placeholder.svg?height=400&width=500"
-                alt="Real-time bot response illustration"
-                width={500}
-                height={400}
-                className="rounded-lg shadow-lg"
-              />
+              <Lottie animationData={RoadAnimation} loop={true} />
             </div>
             <div>
               <h2 className="text-3xl font-bold text-gray-800 mb-6">
