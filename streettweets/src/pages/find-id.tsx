@@ -27,7 +27,7 @@ export default function FindId() {
       </Head>
 
       <div className="min-h-screen flex flex-col bg-gray-50">
-        <header className="bg-gradient-to-r from-sky-400 to-blue-500 text-white">
+        <header className="bg-gradient-to-r text-blue-500 border-b-2">
           <div className="container mx-auto px-4 py-4">
             <nav className="flex justify-between items-center">
               <div className="flex items-center">
@@ -60,7 +60,7 @@ export default function FindId() {
                 >
                   Report
                 </Link>
-                <Link href="/find-id" className="border-b-2 border-white">
+                <Link href="/find-id" className="border-b-2 border-blue-500">
                   Find ID
                 </Link>
                 <Link

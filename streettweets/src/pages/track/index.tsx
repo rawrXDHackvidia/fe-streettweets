@@ -38,7 +38,7 @@ export default function Track() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <header className="bg-gradient-to-r from-sky-400 to-blue-500 text-white">
+      <header className="bg-gradient-to-r text-blue-500 border-b-2">
         <div className="container mx-auto px-4 py-4">
           <nav className="flex justify-between items-center">
             <div className="flex items-center">
@@ -77,7 +77,7 @@ export default function Track() {
               >
                 Find ID
               </Link>
-              <Link href="/track" className="border-b-2 border-white">
+              <Link href="/track" className="border-b-2 border-blue-500">
                 Track
               </Link>
             </div>

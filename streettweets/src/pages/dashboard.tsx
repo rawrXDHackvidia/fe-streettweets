@@ -22,7 +22,7 @@ export default function Dashboard() {
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
       {/* Header */}
-      <header className="bg-gradient-to-r from-sky-400 to-blue-500 text-white">
+      <header className="bg-gradient-to-r text-blue-500 border-b-2">
         <div className="container mx-auto px-4 py-4">
           <nav className="flex justify-between items-center">
             <div className="flex items-center">
@@ -43,7 +43,7 @@ export default function Dashboard() {
               >
                 About
               </Link>
-              <Link href="/dashboard" className="border-b-2 border-white">
+              <Link href="/dashboard" className="border-b-2 border-blue-500">
                 Dashboard
               </Link>
               <Link

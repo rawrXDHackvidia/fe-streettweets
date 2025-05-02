@@ -13,16 +13,6 @@ import {
 // import Lottie from "lottie-react";
 // import RoadAnimation from "../../public/assets/damage-road-lottie.json";
 
-// const LottieAsset = () => {
-//   return (
-//     <Lottie
-//       animationData={RoadAnimation}
-//       loop={true}
-//       style={{ width: 300, height: 300 }}
-//     />
-//   );
-// };
-
 const LiveMap = () => {
   return (
     <iframe
@@ -40,7 +30,7 @@ const LiveMap = () => {
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
-      <header className="bg-gradient-to-r from-sky-400 to-blue-500 text-white">
+      <header className="bg-gradient-to-r text-blue-500 border-b-2">
         <div className="container mx-auto px-4 py-4">
           <nav className="flex justify-between items-center">
             <div className="flex items-center">
@@ -49,7 +39,7 @@ export default function Home() {
               </h1>
             </div>
             <div className="hidden md:flex space-x-8">
-              <Link href="/" className="border-b-2 border-white">
+              <Link href="/" className="border-b-2 border-blue-500">
                 Home
               </Link>
               <Link
@@ -219,7 +209,7 @@ export default function Home() {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>{/* <LottieAsset /> */}</div>
+            {/* <Lottie animationData={RoadAnimation} /> */}
             <div>
               <h2 className="text-3xl font-bold text-gray-800 mb-6">
                 Real-Time AI Monitoring
