@@ -47,7 +47,10 @@ export default function Track() {
               </h1>
             </div>
             <div className="hidden md:flex space-x-8">
-              <Link href="/" className="border-b-2 border-white">
+              <Link
+                href="/"
+                className="hover:border-b-2 hover:border-white transition-all"
+              >
                 Home
               </Link>
               <Link
@@ -74,10 +77,7 @@ export default function Track() {
               >
                 Find ID
               </Link>
-              <Link
-                href="/track"
-                className="hover:border-b-2 hover:border-white transition-all"
-              >
+              <Link href="/track" className="border-b-2 border-white">
                 Track
               </Link>
             </div>

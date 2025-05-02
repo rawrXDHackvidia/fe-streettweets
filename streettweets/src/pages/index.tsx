@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -8,8 +10,18 @@ import {
   Plus,
   Check,
 } from "lucide-react";
-import Lottie from "lottie-react";
-import RoadAnimation from "../../public/assets/damage-road-lottie.json";
+// import Lottie from "lottie-react";
+// import RoadAnimation from "../../public/assets/damage-road-lottie.json";
+
+// const LottieAsset = () => {
+//   return (
+//     <Lottie
+//       animationData={RoadAnimation}
+//       loop={true}
+//       style={{ width: 300, height: 300 }}
+//     />
+//   );
+// };
 
 const LiveMap = () => {
   return (
@@ -207,9 +219,7 @@ export default function Home() {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <Lottie animationData={RoadAnimation} loop={true} />
-            </div>
+            <div>{/* <LottieAsset /> */}</div>
             <div>
               <h2 className="text-3xl font-bold text-gray-800 mb-6">
                 Real-Time AI Monitoring

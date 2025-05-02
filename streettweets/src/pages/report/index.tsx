@@ -22,39 +22,47 @@ const LiveMap = () => {
 export default function Report() {
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Navigation */}
-      <header className="bg-sky-100 text-gray-800">
+      <header className="bg-gradient-to-r from-sky-400 to-blue-500 text-white">
         <div className="container mx-auto px-4 py-4">
           <nav className="flex justify-between items-center">
             <div className="flex items-center">
-              <Link href="/">
-                <h1 className="text-2xl font-bold">
-                  <span className="font-light text-gray-800">Street</span>{" "}
-                  <span className="text-blue-500">Tweets</span>
-                </h1>
-              </Link>
+              <h1 className="text-2xl font-bold">
+                <span className="font-light">Street</span> Tweets
+              </h1>
             </div>
             <div className="hidden md:flex space-x-8">
-              <Link href="/" className="hover:text-blue-500 transition-colors">
+              <Link
+                href="/"
+                className="hover:border-b-2 hover:border-white transition-all"
+              >
                 Home
               </Link>
               <Link
                 href="/about"
-                className="hover:text-blue-500 transition-colors"
+                className="hover:border-b-2 hover:border-white transition-all"
               >
                 About
               </Link>
               <Link
                 href="/dashboard"
-                className="hover:text-blue-500 transition-colors"
+                className="hover:border-b-2 hover:border-white transition-all"
               >
                 Dashboard
               </Link>
-              <Link
-                href="/report"
-                className="text-blue-500 border-b-2 border-blue-500"
-              >
+              <Link href="/report" className="border-b-2 border-white">
                 Report
+              </Link>
+              <Link
+                href="/find-id"
+                className="hover:border-b-2 hover:border-white transition-all"
+              >
+                Find ID
+              </Link>
+              <Link
+                href="/track"
+                className="hover:border-b-2 hover:border-white transition-all"
+              >
+                Track
               </Link>
             </div>
           </nav>
