@@ -1,17 +1,10 @@
-// import { DM_Sans } from "next/font/google";
 import { MapPin, Search, BarChart3, Bot, Mail } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
-// // Initialize DM Sans font
-// const dmSans = DM_Sans({
-//   subsets: ["latin"],
-//   display: "swap",
-// });
-
 export default function AboutPage() {
   return (
-    <div className={`min-h-screen bg-white text-gray-800`}>
+    <div className={`min-h-screen bg-white text-gray-800 font-sans`}>
       <header className="bg-gradient-to-r text-blue-500 border-b-2">
         <div className="container mx-auto px-4 py-4">
           <nav className="flex justify-between items-center">
@@ -186,31 +179,6 @@ export default function AboutPage() {
               We turn digital voices into actionable data that keeps our roads
               safer and more reliable.
             </p>
-          </div>
-        </section>
-
-        {/* Meet the Team */}
-        <section className="max-w-4xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold text-[#1566C3] mb-6">
-            Meet the Team
-          </h2>
-          <div className="bg-white p-8 rounded-xl shadow-md">
-            <p className="text-lg leading-relaxed">
-              We are a group of engineers, data scientists, urban planners, and
-              civic tech enthusiasts who share a common goal: making public
-              infrastructure smarter, faster, and more citizen-centric.
-            </p>
-
-            <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-6">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="flex flex-col items-center">
-                  <div className="w-20 h-20 bg-[#1566C3]/20 rounded-full mb-3 flex items-center justify-center">
-                    <span className="text-[#1566C3] font-bold">ST</span>
-                  </div>
-                  <p className="text-center font-medium">Team Member {i}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 
