@@ -28,7 +28,6 @@ const LiveMap = () => {
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Navigation */}
       <header className="bg-gradient-to-r from-sky-400 to-blue-500 text-white">
         <div className="container mx-auto px-4 py-4">
           <nav className="flex justify-between items-center">
@@ -58,6 +57,18 @@ export default function Home() {
                 className="hover:border-b-2 hover:border-white transition-all"
               >
                 Report
+              </Link>
+              <Link
+                href="/find-id"
+                className="hover:border-b-2 hover:border-white transition-all"
+              >
+                Find ID
+              </Link>
+              <Link
+                href="/track"
+                className="hover:border-b-2 hover:border-white transition-all"
+              >
+                Track
               </Link>
             </div>
           </nav>
