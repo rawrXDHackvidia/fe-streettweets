@@ -4,6 +4,7 @@ import type React from "react";
 
 import Link from "next/link";
 import { Upload, Globe, MapPin } from "lucide-react";
+import Image from "next/image";
 
 const LiveMap = () => {
   return (
@@ -26,6 +27,13 @@ export default function Report() {
         <div className="container mx-auto px-4 py-4">
           <nav className="flex justify-between items-center">
             <div className="flex items-center">
+              <Image
+                width={200}
+                height={200}
+                src={"/assets/logo-street.png"}
+                alt={""}
+                className="w-10 h-10"
+              />
               <h1 className="text-2xl font-bold">
                 <span className="font-light">Street</span> Tweets
               </h1>
@@ -170,12 +178,7 @@ export default function Report() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <h3 className="text-xl font-bold mb-4">Street Tweets</h3>
-              <p className="text-sm opacity-80 mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nec
-                risus feugiat lectus risus sed ullamcorper. Auctor semper
-                fermentum volutpat integer vel. In rhoncus elementum nunc,
-                malesuada mi sed. Nibh est sit lobortis id tempor.
-              </p>
+
               <div className="flex space-x-4">
                 <a href="#" className="hover:opacity-80 transition-opacity">
                   <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
