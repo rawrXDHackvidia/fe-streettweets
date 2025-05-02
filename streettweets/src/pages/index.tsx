@@ -216,7 +216,13 @@ export default function Home() {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            {/* <Lottie animationData={RoadAnimation} /> */}
+            <Image
+              src="/assets/child.png"
+              alt="Illustration of real-time monitoring"
+              width={600}
+              height={400}
+              className="w-full h-auto object-contain"
+            />
             <div>
               <h2 className="text-3xl font-bold text-gray-800 mb-6">
                 Real-Time AI Monitoring
