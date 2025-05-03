@@ -263,6 +263,15 @@ import { Globe } from "lucide-react";
 export default function Report() {
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [location, setLocation] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const [showModal, setShowModal] = useState(false);
+  const [reportInfo, setReportInfo] = useState({
+    message: "",
+    image_url: "",
+    location: "",
+    damage_level: "",
+  });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -272,19 +281,25 @@ export default function Report() {
       return;
     }
 
+    setIsLoading(true); // mulai loading
+
     const formData = new FormData();
     formData.append("location", location);
     formData.append("image", imageFile);
 
     try {
-      const res = await fetch("http://localhost:8000/submit_report", {
-        method: "POST",
-        body: formData,
-      });
+      const res = await fetch(
+        "https://542a-202-158-77-58.ngrok-free.app/submit_report",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       if (res.ok) {
-        alert("Report submitted successfully!");
-        console.log(formData);
+        const data = await res.json();
+        setReportInfo(data);
+        setShowModal(true);
         setLocation("");
         setImageFile(null);
       } else {
@@ -293,11 +308,42 @@ export default function Report() {
       }
     } catch (error) {
       alert("Failed to submit: " + error);
+    } finally {
+      setIsLoading(false); // selesai loading
     }
   };
 
   return (
     <div className="min-h-screen flex flex-col">
+      {showModal && (
+        <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center">
+          <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-6 text-center relative">
+            <h2 className="text-xl font-bold text-green-600 mb-4">
+              ✅ {reportInfo.message}
+            </h2>
+            <Image
+              src={reportInfo.image_url}
+              alt="Damage preview"
+              width={200}
+              height={200}
+              className="w-full h-48 object-cover rounded mb-4"
+            />
+            <p className="text-gray-800 mb-2">
+              📍 <strong>Location:</strong> {reportInfo.location}
+            </p>
+            <p className="text-gray-800 mb-2">
+              ⚠️ <strong>Severity:</strong> {reportInfo.damage_level}
+            </p>
+            <button
+              className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
+              onClick={() => setShowModal(false)}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+
       <header className="bg-gradient-to-r text-blue-500 border-b-2">
         <div className="container mx-auto px-4 py-4">
           <nav className="flex justify-between items-center">
@@ -412,9 +458,14 @@ export default function Report() {
 
               <button
                 type="submit"
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-md transition-colors"
+                disabled={isLoading}
+                className={`w-full py-3 rounded-md transition-colors ${
+                  isLoading
+                    ? "bg-gray-400 cursor-not-allowed text-white"
+                    : "bg-blue-600 hover:bg-blue-700 text-white"
+                }`}
               >
-                Submit Report
+                {isLoading ? "Submitting..." : "Submit Report"}
               </button>
             </form>
           </section>
